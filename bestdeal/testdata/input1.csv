@@ -1,0 +1,4 @@
+hotel_name,nightly_rate,promo_txt,deal_value,deal_type,start_date,end_date
+Hotel Commonwealth,250,$50 off your stay 3 nights or more,-50,rebate_3plus,2015-06-01,2015-07-31
+Hotel Commonwealth,250,5% off your stay,-5,pct,2014-06-01,2016-06-30
+Hotel Commonwealth,250,$25 off your stay,-25,rebate,2015-07-07,2015-07-31   

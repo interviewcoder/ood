@@ -1,0 +1,11 @@
+hotel_name,nightly_rate,promo_txt,deal_value,deal_type,start_date,end_date
+HILTON,250,$50 off your stay 3 nights or more,-50,rebate_3plus,2015-06-01,2015-07-31
+WESTIN,250,$100 off your stay,-100,rebate,2015-07-07,2015-07-31   
+HILTON,250,5% off your stay,-5,pct,2014-06-01,2016-06-30
+WESTIN,250,$25 off your stay,-25,rebate,2015-07-07,2015-07-31   
+HILTON,250,$150 off your stay 3 nights or more,-150,rebate_3plus,2015-06-01,2015-07-31
+PENNINSULAR,500,$150 off your stay 3 nights or more,-150,rebate_3plus,2015-06-01,2015-07-31
+PENNINSULAR,500,10% off your stay,-10,pct,2014-06-01,2016-06-30
+PENNINSULAR,500,15% off your stay,-10,pct,2014-06-01
+HILTON,500,$250off your stay 3 nights or more,-250,rebate_3plus,2015-08-01,2015-07-31
+PENNINSULAR,500,20% off your stay,-20,no type,2014-06-01,2016-06-30
