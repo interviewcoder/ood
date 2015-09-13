@@ -1,9 +1,5 @@
 ### BestHotelDeal Assignment
 
-- Name  : Jingxin Zhu
-- Email : jingxinzhu@nyu.edu
-- Date  : Sep 12, 2015
-
 0. source tree:
    ```
    bestdeal
