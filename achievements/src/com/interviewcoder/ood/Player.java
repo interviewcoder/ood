@@ -1,26 +1,56 @@
 package com.interviewcoder.ood;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
+
+import com.interviewcoder.ood.Item.ItemType;
 
 public class Player {
     
-    private int id;
+    private int _id;
     
-    private String name; 
+    private String _name; 
     
-    private int points;
+    private int _level;  // player's level
+ 
+    private int _coins;  // player's coins
     
-    private int level;
+    private Map<Item, Integer> _items = new HashMap<>();
     
-    private Set<Badge> bages = new HashSet<>();
+    private Set<Integer> _claimedAchievements = new HashSet<>();
     
-    public Player() {
-        // TODO Auto-generated constructor stub
+    public Player(int id, String name) {
+        this._id = id;
+        this._name = name;
+        this._level = 0;
+        this._coins = 0;
     }
 
     public String getName() {
-        return name;
+        return _name;
+    }
+
+    public int getLevel() {
+        return _level;
+    }
+
+    public boolean hasItem(Item item) {
+        return _items.containsKey(item);
+    }
+    
+    /**
+     * 
+     * @param item
+     * @return
+     */
+    public int getItemQuantity(Item item) {
+        return hasItem(item) ? _items.get(item) : 0;
+    }
+
+    public boolean hasAchievement(Integer aid) {
+        return false;
     }
 
 }
