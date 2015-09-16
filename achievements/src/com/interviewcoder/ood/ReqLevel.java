@@ -1,10 +1,11 @@
 package com.interviewcoder.ood;
 
-public class RequirementLevel implements Requirement {
+public class ReqLevel implements Requirement {
     
+    // required level for player
     private int _level;
     
-    public RequirementLevel(int level) {
+    public ReqLevel(int level) {
         this._level = level;
     }
 

@@ -3,24 +3,26 @@ package com.interviewcoder.ood;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * This is a zoo gaming system. There is an achievement manager who will
+ * give player achievements and rewards if player is qualified.
+ */
 public class Zoo {
     
-    private Map<String, Player> players = new HashMap<>();
+    // map of <player id, player>
+    Map<Integer, Player> _players = new HashMap<>();
     
-    private AchieveManager manager;
-    
+    // achievement manager of this zoo
+    AchieveManager _AM = new AchieveManager();
+
     public Zoo() {
-        manager = new AchieveManager();
+        run();
     }
-    
-    public void addPlayer(Player player) {
-        if (!players.containsKey(player.getName())) {
-            players.put(player.getName(), player);
+
+    private void run() {
+        for (Player player : _players.values()) {
+            _AM.checkAchievements(player);
         }
     }
     
-    public static void main(String[] args) {
-        
-    }
-
 }

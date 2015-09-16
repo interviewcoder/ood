@@ -1,18 +1,33 @@
 package com.interviewcoder.ood;
 
-public class Item {
+public abstract class Item implements Requirement {
     
     public enum ItemType {
-        PIG, TIGER, PARRIOT
+        ANIMAL, PIG
     }
-    
-    private ItemType _type;
+   
+    // item type
+    protected ItemType _type;
+
+    // quantity of this type of item
+    protected int _quantity;
+
+    public Item(int quantity) {
+        _quantity = quantity;
+    }
 
     /**
-     * @return the _type
+     * Gets quantity of this kind of item.
+     * 
+     * @return
      */
-    public ItemType getItemType() {
-        return _type;
+    public int getQuantity() {
+        return _quantity;
+    }
+    
+    @Override
+    public boolean isReqMet(Player player) {
+        return player.hasItem(_type) && player.getItemQuantity(_type) >= _quantity;
     }
 
 }

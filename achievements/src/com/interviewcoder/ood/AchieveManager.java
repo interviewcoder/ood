@@ -5,16 +5,39 @@ import java.util.Map;
 
 public class AchieveManager {
 
-    private Map<Integer, Achievement> achievements = new HashMap<>();
+    // Map of <AchievementID, Achievement>
+    private Map<Integer, Achievement> _achievements = new HashMap<>();
     
-    public AchieveManager() {
+    //TODO
+    public AchieveManager() { }
 
+    /**
+     * Adds a new achievement to existing achievements.
+     * 
+     * @param achievement
+     * @return
+     */
+    public boolean addAchievement(Achievement achievement) {
+        int aid = achievement.getId();
+        if (_achievements.containsKey(aid)) {
+            return false;
+        } else {
+            _achievements.put(aid, achievement);
+            return true;
+        }
     }
     
-    public void checkAchievement(Player player) {
-        for (Integer aid : achievements.keySet()) {
-            if (!player.hasAchievement(aid) && achievements.get(aid).checkRequirements(player)) {
-                achievements.get(aid).rewardPlayer(player);
+    /**
+     * Checks player whether meets achievements. If player succeeds in achieving
+     * some achievement, then adds that achievement to player.
+     * 
+     * @param player
+     */
+    public void checkAchievements(Player player) {
+        for (int aid : _achievements.keySet()) {
+            if (!player.hasAchievement(aid) && _achievements.get(aid).checkRequirements(player)) {
+                player.addAchievement(aid);
+                _achievements.get(aid).rewardPlayer(player);
             }
         }
     }
