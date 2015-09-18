@@ -11,7 +11,7 @@ Requirements: 1) player is at least at level 2
               2) player should have at least 5 pigs
 Rewards: 1) add 400 coins to player
 
-Design:
+Design: more details see [discussion.txt](https://github.com/interviewcoder/ood/blob/master/achievements/src/discussion.txt)
 
 - `class AchievementManager`
    ```java
