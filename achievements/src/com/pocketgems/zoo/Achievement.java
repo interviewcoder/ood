@@ -1,4 +1,4 @@
-package com.interviewcoder.ood;
+package com.pocketgems.zoo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,11 +61,34 @@ public class Achievement {
     }
     
     /**
+     * Gets the description of this achievement.
      * 
-     * @return
+     * @return the description of this achievement
      */
     public String getDescription() {
         return _description;
+    }
+    
+    /**
+     * Returns true if two achievements have the same achievement id.
+     * 
+     * @param obj
+     * @return true if two achievements have the same achievement id
+     */
+    @Override
+    public boolean equals(Object obj) {
+        if (!(obj instanceof Achievement) || obj == null) {
+            return false;
+        } else if (this == obj) {
+            return true;
+        } else {
+            return _aid == ((Achievement)obj).getId();
+        }
+    }
+    
+    @Override
+    public int hashCode() {
+        return super.hashCode();
     }
     
 }

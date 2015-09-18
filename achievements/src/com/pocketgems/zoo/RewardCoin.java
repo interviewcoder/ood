@@ -1,4 +1,4 @@
-package com.interviewcoder.ood;
+package com.pocketgems.zoo;
 
 /**
  * Rewards the player some coins.

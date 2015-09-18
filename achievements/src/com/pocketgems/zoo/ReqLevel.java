@@ -1,4 +1,4 @@
-package com.interviewcoder.ood;
+package com.pocketgems.zoo;
 
 public class ReqLevel implements Requirement {
     

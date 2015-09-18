@@ -1,0 +1,41 @@
+Design details for further discussion
+
+1. How to represent Level
+   1.1) Level implements Requirement, Reward
+        Pro: only needs one class
+        Con: can lead to misunderstanding
+   1.2) ReqLevel implements Requirement && RewardLevel implements Reward
+        Pro: clear
+        Con: more code
+   
+2. Data structure for player's achievements ?
+   2.1) Map<AchievementId, Achievement>   
+        Pro: know both id for comparing, and know details of object
+        Con: Simulate database schema, not concise
+   2.2) Set<AchievementId> 
+        Pro: Easy to check whether contains a specific achievement, (only need to compare id)
+        Con: how player lists his all achievements' details when he only knows some id numbers.
+   2.3) Set<Achievement> 
+        Pro: player knows details of achievements
+        Con: need override equals() and hashCode() for checking existing achievement
+   
+3. How to describe Item ?
+   3.1) public enum ItemType enum ItemType{ Pig, Tiger }
+        Pro: easy for implementation if only cares item's type and quantity
+        Con: hard to add details for each specific item type
+   3.2) inheritance, ItemPig class, ItemTigger class, 
+        Pro: better for extend, add more details to class later, add tiger's photo, add pig's color
+        Con: each concrete item needs a class, to much code
+
+4. hasNext() and next() API?
+   4.1) include hasNext() inside next
+           4.1.1) both hasNext() and next() API -> duplicated word in next()   
+           4.1.2) only next() method -> how to indicate nothing found
+   4.2) not included hasNext() -> dangerous if client does now check hasNext() beforehands        
+   4.3) based on implementation, for complicated hasNext() V.S. simple hasNext()
+        -> inconsistent API
+        
+5. How to represent player's items?        
+   5.1) Map<ItemType, Item>: expose item type of API's caller
+   5.2) Map<Item, Integer(Item.quantity)>
+   5.3) Set<Item>: needs iterate all items to get quantity for some item

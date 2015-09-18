@@ -1,8 +1,9 @@
-package com.interviewcoder.ood;
+package com.pocketgems.zoo;
 
 public interface Reward {
 
     /**
+     * Reward player.
      * 
      * @param player
      */
